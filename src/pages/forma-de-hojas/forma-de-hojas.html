@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Busqueda Guiada
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+    <div>
+        <h3 style="color:#000000;">
+          Forma de hojas simples
+        </h3>
+    </div>
+
+    <!--
+      Formas de hojas simples
+      Elíptica
+      Espatulada
+      Lineal
+      Ovalada
+      Palmatilobada
+      Otra
+    -->
+    
+
+    <ion-list radio-group [(ngModel)]="formaHoja">
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/eliptica.png"> <span class="nombre-radio">Elíptica</span>
+          </ion-label>
+          <ion-radio name="formasHojas" value="Elíptica" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/espatulada.png"> <span class="nombre-radio">Espatulada</span>
+          </ion-label>
+          <ion-radio name="formasHojas" value="Espatulada" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/lineal.png"> <span class="nombre-radio">Lineal</span>
+          </ion-label>
+          <ion-radio name="formasHojas" value="Lineal" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/ovalada.png"> <span class="nombre-radio">Ovalada</span>
+          </ion-label>
+          <ion-radio name="formasHojas" value="Ovalada" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/palmatilobada.png"> <span class="nombre-radio">Palmatilobada</span>
+          </ion-label>
+          <ion-radio name="formasHojas" value="Palmatilobada" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/otra.png"> <span class="nombre-radio"></span>
+          </ion-label>
+          <ion-radio name="formasHojas" value="Otra" (click)="query()"></ion-radio>
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>
+
+<ion-footer text-center>
+    <ion-toolbar>
+        <button ion-button color="positive" (click)="pushParamsResultados()">
+            Resultados &nbsp;
+            {{queryResult ? queryResult.length : ""}}
+        </button>
+        <button ion-button color="positive" (click)="pushParamsOpciones()">
+          Más Opciones
+        </button>
+    </ion-toolbar>
+</ion-footer>

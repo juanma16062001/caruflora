@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Busqueda Guiada
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--
+      tipos borde de hoja
+      Entero
+      Dentado
+      Crenado
+    -->
+
+<ion-content padding id="page7">
+    <div>
+        <h3 style="color:#000000;">
+          Borde de hoja
+        </h3>
+    </div>
+    <ion-list radio-group [(ngModel)]="bordeHoja">
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Entero.png"> <span class="nombre-radio">Entero</span>
+          </ion-label>
+          <ion-radio name="bordeHojas" value="Entero" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Dentado.png"> <span class="nombre-radio">Dentado</span>
+          </ion-label>
+          <ion-radio name="bordeHojas" value="Dentado" (click)="query()"></ion-radio>
+        </ion-item>
+          
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Crenado.png"> <span class="nombre-radio">Crenado</span>
+          </ion-label>
+          <ion-radio name="bordeHojas" value="Crenado" (click)="query()"></ion-radio>
+        </ion-item>
+
+    </ion-list>
+</ion-content>
+
+<ion-footer text-center>
+    <ion-toolbar>
+        <button ion-button color="positive" (click)="pushParamsResultados()">
+            Resultados &nbsp;
+            {{queryResult ? queryResult.length : ""}}
+        </button>
+        <button ion-button color="positive" (click)="pushParamsOpciones()">
+          Más Opciones
+        </button>
+    </ion-toolbar>
+</ion-footer>

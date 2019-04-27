@@ -1,0 +1,60 @@
+<!--
+  Generated template for the DetalleArbolPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalles</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card *ngFor="let arbol of arboles">
+            <div style="float: right;" class="left-arrow">
+                    <div style="font-family: Arial, Helvetica, sans-serif">Familia</div>
+                    <div><ion-icon name="arrow-dropright"></ion-icon>&nbsp;{{arbol.familia}}</div>
+                </div>
+        
+        <ion-card-title style="background-color: khaki;">
+                
+            <i>{{arbol.especie}}</i> <br/>
+            <span style="    font-size: smaller;
+            width: 100%;
+            display: block;"> {{arbol.autor}}</span>
+        </ion-card-title>
+        <p>
+            <b>Nombre vulgar:&nbsp;</b>{{nombreVulgar(arbol)}}
+        </p>
+        <ion-slides autoplay="3000">
+            <ng-container *ngIf="arboles">
+              <ion-slide *ngFor="let image of images">
+                  <img [src]="'assets/imgs/' + navParams.data + '/' +  image" style="width: 100%">
+              </ion-slide>
+            </ng-container>
+          </ion-slides>
+        
+        <ion-card-content>
+          
+          <p style="text-align: justify;
+          text-justify: inter-word;">
+              {{arbol.caracteristicas}}
+          </p>
+          <p>
+              <b>Hábitat:&nbsp;</b>{{arbol.habitat}}
+          </p>
+          <p>
+              <b>Estatus:&nbsp;</b>{{arbol.estatus}}
+          </p>
+          <p style="text-align: justify;
+          text-justify: inter-word;">
+              <b>Observaciones:&nbsp;</b>{{arbol.observaciones}}
+          </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

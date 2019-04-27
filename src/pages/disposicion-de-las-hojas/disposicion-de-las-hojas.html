@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Busqueda Guiada
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+ <!--
+      Tipos de dispociion
+      Alterna
+      Opuesta
+      Verticilada
+
+      Tipo de hoja
+      Compuesta
+      Simple
+    -->
+
+<ion-content padding id="page4">
+  <div>
+      <h3 style="color:#000000;">
+        Diposición de las hojas
+      </h3>
+  </div>
+  <ion-list radio-group [(ngModel)]="diposicionHojas">
+
+    <ion-item>
+      <ion-label>
+        <img src="assets/imgs/Alternas.png"> <span class="nombre-radio">Alterna</span>
+      </ion-label>
+      <ion-radio name="tipoDisposicionHoja" value="Alterna" (click)="query()"></ion-radio>
+    </ion-item>
+    
+    <ion-item>
+        <ion-label>
+          <img src="assets/imgs/Opuestas.png"> <span class="nombre-radio">Opuesta</span>
+        </ion-label>
+        <ion-radio name="tipoDisposicionHoja" value="Opuesta" (click)="query()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>
+          <img src="assets/imgs/verticiladas.png"> <span class="nombre-radio">Verticilada</span>
+        </ion-label>
+        <ion-radio name="tipoDisposicionHoja" value="Verticilada" (click)="query()"></ion-radio>
+    </ion-item>
+    
+  </ion-list>
+
+  <div>
+      <h3 style="color:#000000;">
+        Tipo de hoja
+      </h3>
+  </div>
+  <ion-list radio-group [(ngModel)]="tipoHojas">
+
+    <ion-item>
+      <ion-label>
+        <img src="assets/imgs/Simple.png"> <span class="nombre-radio">Simple</span>
+      </ion-label>
+      <ion-radio name="tipoHoja" value="Simple" (click)="query()"></ion-radio>
+    </ion-item>
+    
+    <ion-item>
+        <ion-label>
+          <img src="assets/imgs/Compuesta.png"> <span class="nombre-radio">Compuesta</span>
+        </ion-label>
+        <ion-radio name="tipoHoja" value="Compuesta" (click)="query()"></ion-radio>
+    </ion-item>
+    
+  </ion-list>
+
+</ion-content>
+
+<ion-footer text-center>
+    <ion-toolbar>
+        <button ion-button color="positive" (click)="pushParamsResultados()">
+            Resultados &nbsp;
+            {{queryResult ? queryResult.length : ""}}
+        </button>
+        <button ion-button color="positive" (click)="pushParamsOpciones()">
+          Más Opciones
+        </button>
+    </ion-toolbar>
+</ion-footer>

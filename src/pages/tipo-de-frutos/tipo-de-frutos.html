@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Busqueda Guiada
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page9">
+    <div>
+        <h3 style="color:#000000;">
+          Tipo de frutos
+        </h3>
+    </div>
+    <ion-list radio-group [(ngModel)]="tipoFruto">
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Carnoso.png"> <span class="nombre-radio">Carnoso</span>
+          </ion-label>
+          <ion-radio name="tipoFrutos" value="Carnoso" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Seco.png"> <span class="nombre-radio">Seco</span>
+          </ion-label>
+          <ion-radio name="tipoFrutos" value="Seco" (click)="query()"></ion-radio>
+        </ion-item>
+          
+    </ion-list>
+</ion-content>
+
+<ion-footer text-center>
+    <ion-toolbar>
+        <button ion-button color="positive" (click)="pushParamsResultados()">
+            Resultados &nbsp;
+            {{queryResult ? queryResult.length : ""}}
+        </button>
+    </ion-toolbar>
+</ion-footer>

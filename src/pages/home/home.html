@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1" style="background-image: url('assets/imgs/40ed82161e22f232c24fe4e57a80a75b.png')!important;background-size: 100% 100%;background-repeat: no-repeat;">
+  <div id="home-container3">
+    <img src="assets/imgs/cOQzrzWoSVq1t01mJuho_1c022d7.jpg" style="display:block;width: 45%;height:45%;margin-left:auto;margin-right:auto;" />
+  </div>
+  <div id="home-container1">
+    <h4 id="home-heading2" style="color:#000000;font-weight:600;text-align:center;">
+      Plantas del bajo Río Uruguay
+    </h4>
+    <div id="home-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        ÁRBOLES Y ARBUSTOS
+      </p>
+    </div>
+  </div>
+  <div id="home-container2">
+    <button id="home-button1" ion-button icon-start color="positive" block [navPush]="busquedaGuiada">
+        <ion-icon name="search"></ion-icon> &nbsp; Búsqueda guiada
+    </button>
+  </div>
+  <div id="home-container4">
+    <button id="home-button3" ion-button icon-start color="positive" block [navPush]="listadoEspecies">
+        <ion-icon name="list"></ion-icon> &nbsp; Listado de especies
+    </button>
+  </div>
+</ion-content>
+<ion-footer>
+
+ <div></div>
+
+</ion-footer>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        Busqueda Guiada
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page8">
+    <div>
+        <h3 style="color:#000000;">
+          Color de la flor
+        </h3>
+    </div>
+    <ion-list radio-group [(ngModel)]="colorFlor">
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Blanco_a_verde.png"> <span class="nombre-radio">Blanco a verdoso</span>
+          </ion-label>
+          <ion-radio name="colorFlores" value="Blanco a verdoso" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Amarillo_a_anaranjado.png"> <span class="nombre-radio">Amarillo a anaranjado</span>
+          </ion-label>
+          <ion-radio name="colorFlores" value="Amarillo a anaranjado" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Azul_a_purpura.png"> <span class="nombre-radio">Azúl a púrpura</span>
+          </ion-label>
+          <ion-radio name="colorFlores" value="Azúl a púrpura" (click)="query()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img src="assets/imgs/Rojo_a_rosado.png"> <span class="nombre-radio">Rojo a rosado</span>
+          </ion-label>
+          <ion-radio name="colorFlores" value="Rojo a rosado" (click)="query()"></ion-radio>
+        </ion-item>
+
+    </ion-list>
+</ion-content>
+
+<ion-footer text-center>
+    <ion-toolbar>
+        <button ion-button color="positive" (click)="pushParamsResultados()">
+            Resultados &nbsp;
+            {{queryResult ? queryResult.length : ""}}
+        </button>
+        <button ion-button color="positive" (click)="pushParamsOpciones()">
+          Más Opciones
+        </button>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Busqueda Guiada
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3" style="background-image: url('assets/imgs/40ed82161e22f232c24fe4e57a80a75b.png')!important;background-size: 100% 100%;background-repeat: no-repeat;">
+  <div>
+      <h3 style="color:#000000;">
+        Forma de vida
+      </h3>
+  </div>
+  <div id="formaDeVida-container7">
+    <ion-list id="formaDeVida-form4" radio-group [(ngModel)]="formaVida">
+      <ion-item id="formaDeVida-radio7">
+        <ion-label>
+          <img src="assets/imgs/Arbol.png"> <span class="nombre-radio">Árbol</span>
+        </ion-label>
+        <ion-radio name="tipoFormaVida" value="Árbol" (click)="query()"></ion-radio>
+      </ion-item>
+      <ion-item id="formaDeVida-radio8">
+        <ion-label>
+            <img src="assets/imgs/Arbusto.png"> <span class="nombre-radio">Arbusto</span>
+        </ion-label>
+        <ion-radio name="tipoFormaVida" value="Arbusto" (click)="query()"></ion-radio>
+      </ion-item>
+      <ion-item id="formaDeVida-radio9">
+        <ion-label>
+            <img src="assets/imgs/Palmera.png"> <span class="nombre-radio">Palmera</span>
+        </ion-label>
+        <ion-radio name="tipoFormaVida" value="Palmera" (click)="query()"></ion-radio>
+      </ion-item>
+      <ion-item id="formaDeVida-radio10">
+        <ion-label>
+            <img src="assets/imgs/Cactus.png"> <span class="nombre-radio">Cactus arborescente</span>
+        </ion-label>
+        <ion-radio name="tipoFormaVida" value="Cactus arborescente" (click)="query()"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="spacer" style="width:300px;height:32px;" id="formaDeVida-spacer1"></div>
+  <div id="formaDeVida-container10">
+    <h3 id="formaDeVida-heading3" style="color:#000000;">
+      Presencia de espinas/aguijones?
+    </h3>
+  </div>
+  <div id="formaDeVida-container11">
+    <ion-list radio-group [(ngModel)]="espinas">
+      <ion-item id="formaDeVida-radio11">
+        <ion-label>
+          Sí
+        </ion-label>
+        <ion-radio name="precenciaEspinas" value="Si" (click)="query()"></ion-radio>
+      </ion-item>
+      <ion-item id="formaDeVida-radio12">
+        <ion-label>
+          No
+        </ion-label>
+        <ion-radio name="precenciaEspinas" value="No" (click)="query()"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer text-center>
+    <ion-toolbar>
+        <button ion-button color="positive" (click)="pushParamsResultados()">
+            Resultados &nbsp;
+            {{queryResult ? queryResult.length : ""}}
+        </button>
+        <button ion-button color="positive" (click)="pushParamsOpciones()">
+          Más Opciones
+        </button>
+    </ion-toolbar>
+</ion-footer>

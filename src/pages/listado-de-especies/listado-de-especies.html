@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Listado de Especies
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding id="page2" style="background-image: url('assets/imgs/40ed82161e22f232c24fe4e57a80a75b.png')!important;background-size: 100% 100%;background-repeat: no-repeat;">
+  <ion-list>
+    <!--
+      --junto a especie, nombre de autor esto debe ser tanto para el listado como para el detalle
+      --la especie va en cursiva, el autor no
+      --la ubicacion de la familia, como esta en la guia
+      y a la izquierda colocar el logo de la caru
+      --agrandar items de listado
+      --quitar nombre1 y que arranque con nombre2 en la lista y el detalle
+      --arreglar texto en forma de hojas 2 debe decir COMPUESTA
+      --agregar texto a los dibujos
+      --agrandar tamaño de letra en genera
+      --busqueda guiada: probar checkbox en vez de radio. Opciones mas grandes
+      --en todas las ventanas ponerle el menu
+      el nombre es CARU-Flora
+    -->
+    <ion-item ion-item text-wrap *ngFor="let arbol of arboles" [navPush]="detalle" [navParams]="arbol._id">
+      <ion-avatar item-start>
+          <img [src]="'assets/imgs/' + arbol._id + '/' +  arbol._id + '1.jpg'">
+      </ion-avatar>
+      <h2><i>{{arbol.especie}}</i> {{arbol.autor}}</h2>
+      <h3>
+        {{arbol.nombre2}}{{arbol.nombre3?', ' + arbol.nombre3 : ''}}
+        {{arbol.nombre4?', ' + arbol.nombre4 : ''}}{{arbol.nombre5?', ' + arbol.nombre5 : ''}}
+        {{arbol.nombre6?', ' + arbol.nombre6 : ''}}{{arbol.nombre7?', ' + arbol.nombre7 : ''}}
+      </h3>
+      <p class="descripcion">{{arbol.caracteristicas}}</p>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+
+    <ion-toolbar >
+      <ion-searchbar placeholder="Nombre vulgar" debounce="1000" (ionInput)="searchInput()" [(ngModel)]="busqueda"></ion-searchbar>
+    </ion-toolbar>
+  
+  </ion-footer>

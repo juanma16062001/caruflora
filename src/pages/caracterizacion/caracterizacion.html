@@ -1,0 +1,29 @@
+<!--
+  Generated template for the CaracterizacionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Caru-Flora</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-image: url('assets/imgs/leaves.png')!important;background-size: 50% 50%">
+  <ion-slides pager>
+      
+    <ion-slide *ngFor="let slide of slides">     
+      
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <ion-scroll scrollY="true" style="height: 530px;"><p [innerHTML]="slide.description" style="text-align: justify;
+        text-justify: inter-word;"></p></ion-scroll>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
